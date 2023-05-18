@@ -24,8 +24,8 @@ The achievement objective is to build a client-side component with Angular and t
 - Once authenticated, the user should now view all movies.
 - Upon clicking on a particular movie, users will be taken to a single movie view, where
 additional movie details will be displayed. The single movie view will contain the following additional features:
-    ○ A button that when clicked takes a user to the ​director view,​ where details about the director of that particular movie will be displayed.
-    ○ A button that when clicked takes a user to the ​genre view,​ where details about that particular genre of the movie will be displayed.
+- A button that when clicked takes a user to the ​director view,​ where details about the director of that particular movie will be displayed.
+- A button that when clicked takes a user to the ​genre view,​ where details about that particular genre of the movie will be displayed.
 
 ## Technical requirements
 
@@ -63,7 +63,7 @@ additional movie details will be displayed. The single movie view will contain t
 
 - Install and use the latest version of node
 - Install Angluar CLI: `npm install -g @angular/cli`
-- Clone the repository `git clone https://github.com/NeleSchallenberg/myFlix-Angular-client.git`
+- Clone the repository: `git clone https://github.com/NeleSchallenberg/myFlix-Angular-client.git`
 - Navigate to the project folder in your terminal: `cd myFlix-Angular-client`
 - Run `ng serve --open` to open the app on a development server (`http://localhost:4200/`)
 
@@ -91,4 +91,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - [Project Brief](https://images.careerfoundry.com/public/courses/fullstack-immersion/Full-Stack%20Immersion%20A6%20Project%20Brief.pdf)
 - [API on GitHub](https://github.com/NeleSchallenberg/movie-api)
-- [Api Documentation](https://female-filmmakers.herokuapp.com/documentation.html)
+- [API Documentation](https://female-filmmakers.herokuapp.com/documentation.html)
