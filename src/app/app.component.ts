@@ -1,9 +1,4 @@
-// src/app/app.component.ts
 import { Component } from '@angular/core';
-import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
-import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
-import { MovieCardComponent } from './movie-card/movie-card.component';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
 	selector: 'app-root',
@@ -12,13 +7,4 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class AppComponent {
 	title = 'myFlix-Angular-client';
-
-	constructor(public dialog: MatDialog) {}
-
-	// Function to open the dialog when all movies button is clicked
-	openMoviesDialog(): void {
-		this.dialog.open(MovieCardComponent, {
-			width: '500px',
-		});
-	}
 }

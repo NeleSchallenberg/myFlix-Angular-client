@@ -23,6 +23,7 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const appRoutes: Routes = [
 	// Define welcome view route
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
 		UserLoginFormComponent,
 		MovieCardComponent,
 		WelcomePageComponent,
+  UserProfileComponent,
 	],
 	imports: [
 		BrowserModule,
