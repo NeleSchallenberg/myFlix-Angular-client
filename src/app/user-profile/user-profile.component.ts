@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-// You'll use this import to close the dialog on success
-import { MatDialogRef } from '@angular/material/dialog';
-
 // This import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -19,18 +16,22 @@ export class UserProfileComponent implements OnInit {
 
 	constructor(
 		public fetchApiData: FetchApiDataService,
-		public dialogRef: MatDialogRef<UserProfileComponent>,
+
 		public snackBar: MatSnackBar
 	) {}
 
 	ngOnInit(): void {}
 
+	// Fetch current user data
+	getUser(): void {
+		this.fetchApiData.getUser().subscribe((response) => {
+			console.log(response);
+		});
+	}
 	// This is the function responsible for sending the form inputs to the backend
 	updateUser(): void {
 		this.fetchApiData.editUser(this.userData).subscribe(
 			(response) => {
-				// Logic for a successful user registration goes here! (To be implemented)
-				this.dialogRef.close(); // This will close the modal on success!
 				console.log(response);
 				this.snackBar.open(
 					'User updated successfully successfully!',
