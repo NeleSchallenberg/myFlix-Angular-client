@@ -26,12 +26,13 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MainViewComponent } from './main-view/main-view.component';
 
 const appRoutes: Routes = [
 	// Define welcome view route
 	{ path: 'welcome', component: WelcomePageComponent },
 	// Define movie view route
-	{ path: 'movies', component: MovieCardComponent },
+	{ path: 'movies', component: MainViewComponent },
 	// Define profile view route
 	{ path: 'profile', component: UserProfileComponent },
 	// Set welcome view as default
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
 		WelcomePageComponent,
 		UserProfileComponent,
 		NavbarComponent,
+		MainViewComponent,
 	],
 	imports: [
 		BrowserModule,
