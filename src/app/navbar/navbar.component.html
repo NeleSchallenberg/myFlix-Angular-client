@@ -1,12 +1,13 @@
 <mat-toolbar class="navbar">
 	<h1>MyFlix Angular</h1>
+
 	<span>
-		<button>Movies</button>
-	</span>
-	<span>
-		<button>Profile</button>
-	</span>
-	<span>
-		<button>Logout</button>
+		<button mat-raised-button color="secondary">Movies</button>
+
+		<button mat-raised-button (click)="viewProfile()" color="secondary">
+			Profile
+		</button>
+
+		<button mat-raised-button color="disabled">Logout</button>
 	</span>
 </mat-toolbar>
