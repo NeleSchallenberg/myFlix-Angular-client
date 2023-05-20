@@ -18,6 +18,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {
+	MatGridList,
+	MatGridListModule,
+	MatGridTile,
+} from '@angular/material/grid-list';
 
 // Import components
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
@@ -26,13 +31,16 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MainViewComponent } from './main-view/main-view.component';
+import { FavoriteMovieCardComponent } from './favorite-movie-card/favorite-movie-card.component';
+import { DirectorComponent } from './director/director.component';
+import { GenreComponent } from './genre/genre.component';
+import { MovieDescriptionComponent } from './movie-description/movie-description.component';
 
 const appRoutes: Routes = [
 	// Define welcome view route
 	{ path: 'welcome', component: WelcomePageComponent },
 	// Define movie view route
-	{ path: 'movies', component: MainViewComponent },
+	{ path: 'movies', component: MovieCardComponent },
 	// Define profile view route
 	{ path: 'profile', component: UserProfileComponent },
 	// Set welcome view as default
@@ -48,7 +56,10 @@ const appRoutes: Routes = [
 		WelcomePageComponent,
 		UserProfileComponent,
 		NavbarComponent,
-		MainViewComponent,
+		FavoriteMovieCardComponent,
+  DirectorComponent,
+  GenreComponent,
+  MovieDescriptionComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -64,6 +75,7 @@ const appRoutes: Routes = [
 		MatCardModule,
 		MatIconModule,
 		MatToolbarModule,
+		MatGridListModule,
 		RouterModule.forRoot(appRoutes),
 	],
 	providers: [],
