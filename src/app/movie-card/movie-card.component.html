@@ -28,7 +28,15 @@
 			>
 				Director
 			</button>
-			<button mat-button color="primary">Synopsis</button>
+			<button
+				mat-button
+				(click)="
+					getDescription(movie.Title, movie.Year, movie.Description)
+				"
+				color="primary"
+			>
+				Description
+			</button>
 			<mat-icon>favorite_border</mat-icon>
 		</mat-card-actions>
 	</mat-card>

@@ -1,0 +1,19 @@
+<mat-card class="description">
+	<button
+		class="close-button"
+		mat-stroked-button
+		aria-label="Close description card"
+		mat-dialog-close
+		color="primary"
+	>
+		Close
+	</button>
+	<mat-card-title>
+		<h3>{{ data.Title }}</h3>
+	</mat-card-title>
+
+	<mat-dialog-content>
+		<p>{{ data.Year }}</p>
+		<p>{{ data.Description }}</p>
+	</mat-dialog-content>
+</mat-card>

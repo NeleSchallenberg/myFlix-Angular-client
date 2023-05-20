@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DirectorComponent } from '../director/director.component';
 import { GenreComponent } from '../genre/genre.component';
+import { MovieDescriptionComponent } from '../movie-description/movie-description.component';
 
 @Component({
 	selector: 'app-movie-card',
@@ -51,6 +52,21 @@ export class MovieCardComponent implements OnInit {
 			data: {
 				Name: name,
 				Bio: bio,
+			},
+		});
+	}
+
+	// Get description of movie plot
+	getDescription(
+		title: string,
+		year: string,
+		movieDescription: string
+	): void {
+		this.dialog.open(MovieDescriptionComponent, {
+			data: {
+				Title: title,
+				Year: year,
+				Description: movieDescription,
 			},
 		});
 	}
