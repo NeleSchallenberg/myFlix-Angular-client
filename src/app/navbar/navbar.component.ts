@@ -19,4 +19,9 @@ export class NavbarComponent {
 	viewMovies(): void {
 		this.router.navigate(['movies']);
 	}
+
+	onLogout(): void {
+		this.router.navigate(['welcome']);
+		localStorage.clear();
+	}
 }
