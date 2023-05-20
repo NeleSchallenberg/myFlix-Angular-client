@@ -7,11 +7,11 @@ import { GenreComponent } from '../genre/genre.component';
 import { MovieDescriptionComponent } from '../movie-description/movie-description.component';
 
 @Component({
-	selector: 'app-movie-card',
-	templateUrl: './movie-card.component.html',
-	styleUrls: ['./movie-card.component.scss'],
+	selector: 'app-favorite-movie-card',
+	templateUrl: './favorite-movie-card.component.html',
+	styleUrls: ['./favorite-movie-card.component.scss'],
 })
-export class MovieCardComponent implements OnInit {
+export class FavoriteMovieCardComponent implements OnInit {
 	movies: any[] = [];
 	favorites: any[] = [];
 
