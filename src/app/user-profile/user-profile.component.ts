@@ -33,11 +33,10 @@ export class UserProfileComponent implements OnInit {
 
 	// Fetch current user data
 	getUser(): void {
-		this.fetchApiData.getUser().subscribe((resp: any) => {
-			// we set user variable to keep what we get as a response from API call
-			this.user = resp;
-			// console.log(resp);
+		this.fetchApiData.getUser().subscribe((response: any) => {
+			this.user = response;
 			this.userData.Username = this.user.Username;
+			// this.userData.Password = this.user.Password.slice(0, 8);
 			this.userData.Email = this.user.Email;
 			this.userData.Birthday = formatDate(
 				this.user.Birthday,
@@ -47,31 +46,25 @@ export class UserProfileComponent implements OnInit {
 			);
 			return this.user;
 		});
-		this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-			this.favorites = resp.filter(
-				(m: { _id: any }) =>
-					this.user.FavoriteMovies.indexOf(m._id) >= 0
-			);
-			console.log(this.favorites);
-		});
 	}
 
-	// This is the function responsible for sending the form inputs to the backend
 	updateUser(): void {
-		this.fetchApiData.editUser(this.userData).subscribe(
-			(response) => {
-				localStorage.setItem('user', JSON.stringify(response));
-
-				this.snackBar.open('User updated successfully!', 'OK', {
-					duration: 2000,
-				});
-			},
-			(response) => {
-				console.log(response);
-				this.snackBar.open(response, 'OK', {
-					duration: 2000,
-				});
+		this.fetchApiData.editUser(this.userData).subscribe((response) => {
+			console.log(response);
+			if (
+				this.user.Username !== response.Username ||
+				this.user.Password !== response.Password
+			) {
+				localStorage.clear();
+				this.router.navigate(['welcome']);
+				this.snackBar.open(
+					'User data updated successfully! Please log in again.',
+					'OK',
+					{
+						duration: 2000,
+					}
+				);
 			}
-		);
+		});
 	}
 }

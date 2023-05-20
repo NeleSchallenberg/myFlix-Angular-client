@@ -20,7 +20,7 @@
 					matInput
 					[(ngModel)]="userData.Password"
 					type="password"
-					placeholder="Password"
+					placeholder="••••••••"
 					name="Password"
 					required
 				/>
@@ -45,7 +45,10 @@
 				/>
 			</mat-form-field>
 		</form>
-		<p>* Your password is required to update your data.</p>
+		<p>
+			After you've changed your user data, you will be asked to log in
+			again.
+		</p>
 	</mat-card-content>
 	<mat-card-actions>
 		<button mat-raised-button (click)="updateUser()" color="primary">
@@ -57,4 +60,5 @@
 	<mat-card-header>
 		<mat-card-title>Your favorite movies</mat-card-title>
 	</mat-card-header>
+	<app-favorite-movie-card />
 </mat-card>
