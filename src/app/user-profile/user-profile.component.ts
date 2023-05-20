@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { Router } from '@angular/router';
+import { formatDate } from '@angular/common';
 
 @Component({
 	selector: 'app-user-profile',
@@ -39,7 +39,12 @@ export class UserProfileComponent implements OnInit {
 			// console.log(resp);
 			this.userData.Username = this.user.Username;
 			this.userData.Email = this.user.Email;
-			this.userData.Birthday = this.user.Birthday;
+			this.userData.Birthday = formatDate(
+				this.user.Birthday,
+				'yyyy-MM-dd',
+				'en-US',
+				'UTC+0'
+			);
 			return this.user;
 		});
 		this.fetchApiData.getAllMovies().subscribe((resp: any) => {
@@ -47,6 +52,7 @@ export class UserProfileComponent implements OnInit {
 				(m: { _id: any }) =>
 					this.user.FavoriteMovies.indexOf(m._id) >= 0
 			);
+			console.log(this.favorites);
 		});
 	}
 
