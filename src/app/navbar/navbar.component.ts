@@ -16,4 +16,7 @@ export class NavbarComponent {
 	viewProfile(): void {
 		this.router.navigate(['profile']);
 	}
+	viewMovies(): void {
+		this.router.navigate(['movies']);
+	}
 }

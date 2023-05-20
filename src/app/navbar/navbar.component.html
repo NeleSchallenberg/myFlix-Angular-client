@@ -2,7 +2,9 @@
 	<h1>MyFlix Angular</h1>
 
 	<span>
-		<button mat-raised-button color="secondary">Movies</button>
+		<button mat-raised-button (click)="viewMovies()" color="secondary">
+			Movies
+		</button>
 
 		<button mat-raised-button (click)="viewProfile()" color="secondary">
 			Profile
