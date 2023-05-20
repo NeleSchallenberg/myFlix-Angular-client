@@ -1,0 +1,18 @@
+<mat-card class="genre">
+	<button
+		class="close-button"
+		mat-stroked-button
+		aria-label="Close genre info card"
+		mat-dialog-close
+		color="primary"
+	>
+		Close
+	</button>
+	<mat-card-title>
+		<h3>{{ data.Name }}</h3>
+	</mat-card-title>
+
+	<mat-dialog-content>
+		<p>{{ data.Description }}</p>
+	</mat-dialog-content>
+</mat-card>

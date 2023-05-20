@@ -14,7 +14,13 @@
 			width="400px"
 		/>
 		<mat-card-actions>
-			<button mat-button color="primary">Genre</button>
+			<button
+				mat-button
+				(click)="getGenre(movie.Genre.Name, movie.Genre.Description)"
+				color="primary"
+			>
+				Genre
+			</button>
 			<button
 				mat-button
 				(click)="getDirector(movie.Director.Name, movie.Director.Bio)"
