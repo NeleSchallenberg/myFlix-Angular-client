@@ -11,7 +11,6 @@ import { formatDate } from '@angular/common';
 })
 export class UserProfileComponent implements OnInit {
 	user: any = {};
-	favorites: any[] = [];
 
 	@Input() userData = {
 		Username: '',
@@ -22,7 +21,6 @@ export class UserProfileComponent implements OnInit {
 
 	constructor(
 		public fetchApiData: FetchApiDataService,
-		// public dialogRef: MatDialogRef<UserProfileComponent>,
 		public snackBar: MatSnackBar,
 		private router: Router
 	) {}
@@ -36,7 +34,6 @@ export class UserProfileComponent implements OnInit {
 		this.fetchApiData.getUser().subscribe((response: any) => {
 			this.user = response;
 			this.userData.Username = this.user.Username;
-			// this.userData.Password = this.user.Password.slice(0, 8);
 			this.userData.Email = this.user.Email;
 			this.userData.Birthday = formatDate(
 				this.user.Birthday,
@@ -59,6 +56,14 @@ export class UserProfileComponent implements OnInit {
 				this.router.navigate(['welcome']);
 				this.snackBar.open(
 					'User data updated successfully! Please log in again.',
+					'OK',
+					{
+						duration: 2000,
+					}
+				);
+			} else {
+				this.snackBar.open(
+					'Something went wrong! Please try again.',
 					'OK',
 					{
 						duration: 2000,
