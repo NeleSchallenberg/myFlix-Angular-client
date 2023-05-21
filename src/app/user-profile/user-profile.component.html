@@ -1,7 +1,9 @@
 <app-navbar />
 <mat-card>
 	<mat-card-header>
-		<mat-card-title>Update your information</mat-card-title>
+		<mat-card-title>
+			<h2>Update your information</h2>
+		</mat-card-title>
 	</mat-card-header>
 	<mat-card-content>
 		<form>
@@ -49,16 +51,18 @@
 			After you've changed your user data, you will be asked to log in
 			again.
 		</p>
+		<mat-card-actions>
+			<button mat-raised-button (click)="updateUser()" color="accent">
+				Update
+			</button>
+		</mat-card-actions>
 	</mat-card-content>
-	<mat-card-actions>
-		<button mat-raised-button (click)="updateUser()" color="primary">
-			Update
-		</button>
-	</mat-card-actions>
 </mat-card>
 <mat-card>
 	<mat-card-header>
-		<mat-card-title>Your favorite movies</mat-card-title>
+		<mat-card-title>
+			<h2>Your favorite movies</h2>
+		</mat-card-title>
 	</mat-card-header>
 	<app-favorite-movie-card />
 </mat-card>

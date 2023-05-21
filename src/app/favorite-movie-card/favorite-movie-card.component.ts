@@ -12,7 +12,7 @@ import { MovieDescriptionComponent } from '../movie-description/movie-descriptio
 	styleUrls: ['./favorite-movie-card.component.scss'],
 })
 export class FavoriteMovieCardComponent implements OnInit {
-	movies: any[] = [];
+	// movies: any[] = [];
 	favorites: any[] = [];
 
 	constructor(
@@ -22,18 +22,18 @@ export class FavoriteMovieCardComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		this.getMovies();
+		// this.getMovies();
 		this.getFavorites();
 	}
 
-	// Get all movies
-	getMovies(): void {
-		this.fetchApiData.getAllMovies().subscribe((response: any) => {
-			this.movies = response;
-			console.log(this.movies);
-			return this.movies;
-		});
-	}
+	// // Get all movies
+	// getMovies(): void {
+	// 	this.fetchApiData.getAllMovies().subscribe((response: any) => {
+	// 		this.movies = response;
+	// 		console.log(this.movies);
+	// 		return this.movies;
+	// 	});
+	// }
 
 	// Get information about genre
 	getGenre(name: string, description: string): void {
