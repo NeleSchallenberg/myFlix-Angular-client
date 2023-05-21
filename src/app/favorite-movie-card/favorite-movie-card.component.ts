@@ -12,7 +12,7 @@ import { MovieDescriptionComponent } from '../movie-description/movie-descriptio
 	styleUrls: ['./favorite-movie-card.component.scss'],
 })
 export class FavoriteMovieCardComponent implements OnInit {
-	// movies: any[] = [];
+	movies: any[] = [];
 	favorites: any[] = [];
 
 	constructor(
@@ -22,18 +22,46 @@ export class FavoriteMovieCardComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		// this.getMovies();
 		this.getFavorites();
 	}
 
-	// // Get all movies
-	// getMovies(): void {
-	// 	this.fetchApiData.getAllMovies().subscribe((response: any) => {
-	// 		this.movies = response;
-	// 		console.log(this.movies);
-	// 		return this.movies;
-	// 	});
-	// }
+	// Get list of favorite movies
+	getFavorites(): void {
+		this.fetchApiData.getUser().subscribe((response: any) => {
+			this.favorites = response.FavoriteMovies;
+			console.log(response);
+			return this.favorites;
+		});
+	}
+
+	// Check if movie is favorite
+	isFavorite(id: string): boolean {
+		return this.favorites.includes(id);
+	}
+
+	// Add movie to list of favorites
+	addFavorite(id: string): void {
+		console.log(id);
+		this.fetchApiData.addFavorite(id).subscribe((response) => {
+			console.log(response);
+			this.snackBar.open('Movie was added to your list!', 'OK', {
+				duration: 4000,
+			});
+			this.ngOnInit();
+		});
+	}
+
+	// Delete movie from list of favorites
+	deleteFavorite(id: string): void {
+		console.log(id);
+		this.fetchApiData.deleteFavorite(id).subscribe((response) => {
+			console.log(response);
+			this.snackBar.open('Movie was deleted from your list.', 'OK', {
+				duration: 4000,
+			});
+			this.ngOnInit();
+		});
+	}
 
 	// Get information about genre
 	getGenre(name: string, description: string): void {
@@ -69,44 +97,6 @@ export class FavoriteMovieCardComponent implements OnInit {
 				Year: year,
 				Description: movieDescription,
 			},
-		});
-	}
-
-	// Get list of favorite movies
-	getFavorites(): void {
-		this.fetchApiData.getUser().subscribe((response: any) => {
-			this.favorites = response.FavoriteMovies;
-			console.log(this.favorites);
-			return this.favorites;
-		});
-	}
-
-	// Check if movie is favorite
-	isFavorite(id: string): boolean {
-		return this.favorites.includes(id);
-	}
-
-	// Add movie to list of favorites
-	addFavorite(id: string): void {
-		console.log(id);
-		this.fetchApiData.addFavorite(id).subscribe((response) => {
-			console.log(response);
-			this.snackBar.open('Movie was added to your list!', 'OK', {
-				duration: 4000,
-			});
-			this.ngOnInit();
-		});
-	}
-
-	// Delete movie from list of favorites
-	deleteFavorite(id: string): void {
-		console.log(id);
-		this.fetchApiData.deleteFavorite(id).subscribe((response) => {
-			console.log(response);
-			this.snackBar.open('Movie was deleted from your list.', 'OK', {
-				duration: 4000,
-			});
-			this.ngOnInit();
 		});
 	}
 }
