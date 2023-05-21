@@ -4,6 +4,9 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
+/**
+ * Displays user login form with input fields
+ */
 @Component({
 	selector: 'app-user-login-form',
 	templateUrl: './user-login-form.component.html',
@@ -21,12 +24,13 @@ export class UserLoginFormComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	// This is the function responsible for sending the form inputs to the backend
+	/**
+	 * This is the function responsible for sending the form inputs to the backend
+	 */
 	loginUser(): void {
 		this.fetchApiData.userLogin(this.userData).subscribe(
 			(response) => {
-				// Logic for a successful user registration goes here! (To be implemented)
-				this.dialogRef.close(); // This will close the modal on success!
+				this.dialogRef.close(); // Close the modal on success
 				console.log(response);
 				localStorage.setItem('username', response.user.Username);
 				localStorage.setItem('token', response.token);

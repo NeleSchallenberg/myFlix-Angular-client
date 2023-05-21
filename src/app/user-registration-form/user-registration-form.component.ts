@@ -3,6 +3,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
+/**
+ * Display user registration form with input fields
+ */
 @Component({
 	selector: 'app-user-registration-form',
 	templateUrl: './user-registration-form.component.html',
@@ -19,7 +22,9 @@ export class UserRegistrationFormComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	// Send form inputs to the backend
+	/**
+	 * Send form inputs to the backend
+	 */
 	registerUser(): void {
 		this.fetchApiData.userRegistration(this.userData).subscribe(
 			(response) => {

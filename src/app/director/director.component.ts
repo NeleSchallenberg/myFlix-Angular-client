@@ -1,6 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+/**
+ * Display director component when user clicks on "Director" button
+ */
 @Component({
 	selector: 'app-director',
 	templateUrl: './director.component.html',

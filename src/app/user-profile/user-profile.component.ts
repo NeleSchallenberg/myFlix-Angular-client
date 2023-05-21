@@ -4,6 +4,9 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { Router } from '@angular/router';
 import { formatDate } from '@angular/common';
 
+/**
+ * Displays user profile component
+ */
 @Component({
 	selector: 'app-user-profile',
 	templateUrl: './user-profile.component.html',
@@ -29,7 +32,9 @@ export class UserProfileComponent implements OnInit {
 		this.getUser();
 	}
 
-	// Fetch current user data
+	/**
+	 * Fetch current user data from the backend
+	 */
 	getUser(): void {
 		this.fetchApiData.getUser().subscribe((response: any) => {
 			this.user = response;
@@ -45,6 +50,9 @@ export class UserProfileComponent implements OnInit {
 		});
 	}
 
+	/**
+	 * Updates user profile data
+	 */
 	updateUser(): void {
 		this.fetchApiData.editUser(this.userData).subscribe((response) => {
 			console.log(response);

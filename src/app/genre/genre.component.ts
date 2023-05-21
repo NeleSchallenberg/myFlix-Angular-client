@@ -1,6 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+/**
+ * Display genre component when user clicks on "Genre" button
+ */
 @Component({
 	selector: 'app-genre',
 	templateUrl: './genre.component.html',

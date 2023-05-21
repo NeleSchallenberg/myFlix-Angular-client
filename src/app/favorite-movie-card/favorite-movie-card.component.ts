@@ -6,6 +6,9 @@ import { DirectorComponent } from '../director/director.component';
 import { GenreComponent } from '../genre/genre.component';
 import { MovieDescriptionComponent } from '../movie-description/movie-description.component';
 
+/**
+ * Display favorite movie card component in profile view
+ */
 @Component({
 	selector: 'app-favorite-movie-card',
 	templateUrl: './favorite-movie-card.component.html',
@@ -25,7 +28,9 @@ export class FavoriteMovieCardComponent implements OnInit {
 		this.getFavorites();
 	}
 
-	// Get list of favorite movies
+	/**
+	 * Get list of favorite movies for current user
+	 */
 	getFavorites(): void {
 		this.fetchApiData.getUser().subscribe((response: any) => {
 			this.favorites = response.FavoriteMovies;
@@ -34,12 +39,19 @@ export class FavoriteMovieCardComponent implements OnInit {
 		});
 	}
 
-	// Check if movie is favorite
+	/**
+	 * Checks if movie is in favorites list
+	 * @param {string} id - Movie ID
+	 * @returns {boolean} - True or false
+	 */
 	isFavorite(id: string): boolean {
 		return this.favorites.includes(id);
 	}
 
-	// Add movie to list of favorites
+	/**
+	 * Add movie to favorites list
+	 * @param {string} id - Movie ID
+	 */
 	addFavorite(id: string): void {
 		console.log(id);
 		this.fetchApiData.addFavorite(id).subscribe((response) => {
@@ -51,7 +63,10 @@ export class FavoriteMovieCardComponent implements OnInit {
 		});
 	}
 
-	// Delete movie from list of favorites
+	/**
+	 * Delete movie from favorites list
+	 * @param {string} id - Movie ID
+	 */
 	deleteFavorite(id: string): void {
 		console.log(id);
 		this.fetchApiData.deleteFavorite(id).subscribe((response) => {
@@ -63,7 +78,11 @@ export class FavoriteMovieCardComponent implements OnInit {
 		});
 	}
 
-	// Get information about genre
+	/**
+	 * Displays genre details in a dialog
+	 * @param {string} name - Genre name
+	 * @param {string} description - Genre description
+	 */
 	getGenre(name: string, description: string): void {
 		console.log(name);
 		this.dialog.open(GenreComponent, {
@@ -74,7 +93,11 @@ export class FavoriteMovieCardComponent implements OnInit {
 		});
 	}
 
-	// Get information about director
+	/**
+	 * Display director details in a dialog
+	 * @param {string} name - Director name
+	 * @param {string} bio - Director bio
+	 */
 	getDirector(name: string, bio: string): void {
 		console.log(name);
 		this.dialog.open(DirectorComponent, {
@@ -85,7 +108,12 @@ export class FavoriteMovieCardComponent implements OnInit {
 		});
 	}
 
-	// Get description of movie plot
+	/**
+	 * Display movie description in a dialog
+	 * @param {string} title - Movie title
+	 * @param {string} year - Year of release
+	 * @param {string} movieDescription - Movie plot description
+	 */
 	getDescription(
 		title: string,
 		year: string,
