@@ -1,19 +1,20 @@
 <div class="main-page">
-	<h1>Welcome to myFlix!</h1>
-	<button
-		mat-raised-button
-		(click)="openUserRegistrationDialog()"
-		style="margin-right: 10px"
-		color="primary"
-	>
-		Sign Up
-	</button>
-	<button
-		mat-raised-button
-		color="primary"
-		(click)="openUserLoginDialog()"
-		style="margin-right: 10px"
-	>
-		Login
-	</button>
+	<mat-card>
+		<mat-card-header>
+			<b>Welcome to</b>
+			<h1>MyFlix</h1>
+		</mat-card-header>
+		<mat-card-content>
+			<button
+				mat-raised-button
+				(click)="openUserRegistrationDialog()"
+				style="margin-right: 10px"
+			>
+				Sign Up
+			</button>
+			<button mat-raised-button (click)="openUserLoginDialog()">
+				Login
+			</button>
+		</mat-card-content>
+	</mat-card>
 </div>
