@@ -9,6 +9,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The achievement objective is to build a client-side component with Angular and to learn how to work with others by writing and sharing documentation, providing feedback, and making a contribution to the tech community.
 
+## Web View
+
+/[Web View](https://github.com/NeleSchallenberg/myFlix-Angular-client/blob/main/src/assets/angular-app.png)
+
 ## User Stories
 
 - As a user, I want to be able to receive information on movies, directors, and genres so that I can learn more about movies I’ve watched or am interested in.
@@ -92,3 +96,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [Project Brief](https://images.careerfoundry.com/public/courses/fullstack-immersion/Full-Stack%20Immersion%20A6%20Project%20Brief.pdf)
 - [API on GitHub](https://github.com/NeleSchallenberg/movie-api)
 - [API Documentation](https://female-filmmakers.herokuapp.com/documentation.html)
+
