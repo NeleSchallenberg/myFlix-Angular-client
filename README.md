@@ -11,7 +11,7 @@ The achievement objective is to build a client-side component with Angular and t
 
 ## Web View
 
-/[Web View](https://github.com/NeleSchallenberg/myFlix-Angular-client/blob/main/src/assets/angular-app.png)
+![Web View](https://github.com/NeleSchallenberg/myFlix-Angular-client/blob/main/src/assets/angular-app.png)
 
 ## User Stories
 
