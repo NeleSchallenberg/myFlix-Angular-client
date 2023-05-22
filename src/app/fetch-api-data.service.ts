@@ -144,6 +144,15 @@ export class FetchApiDataService {
 	}
 
 	/**
+	 * Checks if movie is already added to favorites
+	 * @param {string} movieId The movie ID
+	 */
+	isFavorite(movieId: string): boolean {
+		const user = JSON.parse(localStorage.getItem('user') || '{}');
+		return user.FavoriteMovies.indexOf(movieId) >= 0;
+	}
+
+	/**
 	 * Make API call to add movie to user's favorite list / POST
 	 * @param {string} movieId - ID of movie to add to favorites
 	 * @returns http POST request to "users/[Username]/movies/[MovieId]"
@@ -192,16 +201,6 @@ export class FetchApiDataService {
 				}),
 			})
 			.pipe(map(this.extractResponseData), catchError(this.handleError));
-	}
-
-	/**
-	 * Checks if movie is already added to favorites
-	 * @param {string} movieId The movie ID
-	 */
-	isFavorite(movieId: string): boolean {
-		const user = JSON.parse(localStorage.getItem('username') || '{}');
-		console.log('username');
-		return user.FavoriteMovies.indexOf(movieId) >= 0;
 	}
 
 	/**
