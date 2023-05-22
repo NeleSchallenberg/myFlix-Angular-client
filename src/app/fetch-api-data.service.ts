@@ -152,7 +152,7 @@ export class FetchApiDataService {
 		const token = localStorage.getItem('token');
 		const username = localStorage.getItem('username');
 		return this.http
-			.get(apiUrl + 'users/' + username + '/movies/' + movieId, {
+			.post(apiUrl + 'users/' + username + '/movies/' + movieId, {
 				headers: new HttpHeaders({
 					Authorization: 'Bearer ' + token,
 				}),
@@ -169,7 +169,7 @@ export class FetchApiDataService {
 		const token = localStorage.getItem('token');
 		const username = localStorage.getItem('username');
 		return this.http
-			.get(apiUrl + 'users/' + username + '/movies/' + movieId, {
+			.delete(apiUrl + 'users/' + username + '/movies/' + movieId, {
 				headers: new HttpHeaders({
 					Authorization: 'Bearer ' + token,
 				}),
@@ -198,8 +198,9 @@ export class FetchApiDataService {
 	 * Checks if movie is already added to favorites
 	 * @param {string} movieId The movie ID
 	 */
-	isFavoriteMovie(movieId: string): boolean {
-		const user = JSON.parse(localStorage.getItem('user') || '{}');
+	isFavorite(movieId: string): boolean {
+		const user = JSON.parse(localStorage.getItem('username') || '{}');
+		console.log('username');
 		return user.FavoriteMovies.indexOf(movieId) >= 0;
 	}
 

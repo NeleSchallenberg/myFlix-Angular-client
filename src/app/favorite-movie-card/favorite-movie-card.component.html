@@ -1,5 +1,5 @@
 <mat-grid-list cols="3">
-	<mat-grid-tile *ngFor="let movie of favorites">
+	<mat-grid-tile *ngFor="let movie of findFavoriteMovies()">
 		<mat-card>
 			<mat-card-header>
 				<mat-card-title>{{ movie.Title }}</mat-card-title>
